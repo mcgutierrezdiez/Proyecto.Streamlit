@@ -1,18 +1,18 @@
 import streamlit as st
+# mini bot
+import streamlit as st
 
-st.title("Ejemplo de entrada de texto")
+#st.set_page_config(page_title="Ejemplo Chat", layout="centered")
 
-# Widget: text_input
-nombre = st.text_input("Escribe tu nombre")
+st.title("💬 Mini Chatbot (solo repite lo que dices)")
 
-if nombre:
-    st.write(f"Hola, {nombre} 👋")
-    
-# Seleccion multiple
-options = st.multiselect(
-    "Cuales son tus dudas de hoy?",
-    ["Proposiciones logicas", "Conjuntos", "Grafos"],
-    default=["Proposiciones logicas"],
-)
+# Entrada tipo chat (abajo de la pantalla)
+user_input = st.chat_input("Escribe algo...")
 
-st.write("Seleccionaste:", options)
+# Si el usuario escribe algo, mostramos los mensajes
+if user_input:
+    # Mostrar el mensaje del usuario
+    st.chat_message("user").write(user_input)
+
+    # Mostrar una respuesta simple del asistente
+    st.chat_message("assistant").write(f"{user_input} <- eso dijiste")
