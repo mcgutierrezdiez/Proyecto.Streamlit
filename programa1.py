@@ -16,3 +16,5 @@ if user_input:
 
     # Mostrar una respuesta simple del asistente
     st.chat_message("assistant").write(f"{user_input} <- eso dijiste")
+
+st.balloons()
