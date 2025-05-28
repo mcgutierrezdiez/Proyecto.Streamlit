@@ -8,22 +8,19 @@ nombre = st.text_input("Escribe tu nombre")
 if nombre:
     st.write(f"Hola, {nombre} 👋")
 
-# mini bot
+# Calendario
+import streamlit as st
+import datetime
 
-st.set_page_config(page_title="Ejemplo Chat", layout="centered")
+st.title("Ejemplo de fecha")
 
-st.title("💬 Mini Chatbot (solo repite lo que dices)")
+# Widget: date_input
+fecha = st.date_input("Selecciona una fecha para asesoria", value=datetime.date.today())
 
-# Entrada tipo chat (abajo de la pantalla)
-user_input = st.chat_input("Escribe algo...")
+st.write("La fecha seleccionada es:", fecha)
 
-# Si el usuario escribe algo, mostramos los mensajes
-if user_input:
-    # Mostrar el mensaje del usuario
-    st.chat_message("user").write(user_input)
 
-    # Mostrar una respuesta simple del asistente
-    st.chat_message("assistant").write(f"{user_input} <- eso dijiste")
+
 st.title("Ejemplo de Checkbox")
 
 
