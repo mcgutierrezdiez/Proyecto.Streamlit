@@ -1,35 +1,5 @@
 import streamlit as st
 
-st.title("¡Hola, Streamlit!")
-st.write("Tu primer app con Streamlit está corriendo.")
-
-# 02_entrada_texto.py
-nombre = st.text_input("¿Cuál es tu nombre?")
-if nombre:
-    st.write(f"Hola, {nombre} 👋")
-
-# 03_operaciones_numeros.py
-a = st.number_input("Ingresa un número", value=0)
-b = st.number_input("Ingresa otro número", value=0)
-
-st.write("Suma:", a + b)
-st.write("Producto:", a * b)
-  
-st.title("Ejemplo de Slider")
-
-# Widget: slider
-numero = st.slider("Selecciona un número", min_value=0, max_value=100, value=50)
-
-st.write("El número seleccionado es:", numero)
-
-st.title("Ejemplo de Checkbox")
-
-# Widget: checkbox
-mostrar = st.checkbox("Mostrar mensaje secreto")
-
-if mostrar:
-    st.success("🎉 ¡Este es el mensaje secreto!")
-
 st.title("Ejemplo de entrada de texto")
 
 # Widget: text_input
@@ -37,6 +7,25 @@ nombre = st.text_input("Escribe tu nombre")
 
 if nombre:
     st.write(f"Hola, {nombre} 👋")
+
+# mini bot
+
+st.set_page_config(page_title="Ejemplo Chat", layout="centered")
+
+st.title("💬 Mini Chatbot (solo repite lo que dices)")
+
+# Entrada tipo chat (abajo de la pantalla)
+user_input = st.chat_input("Escribe algo...")
+
+# Si el usuario escribe algo, mostramos los mensajes
+if user_input:
+    # Mostrar el mensaje del usuario
+    st.chat_message("user").write(user_input)
+
+    # Mostrar una respuesta simple del asistente
+    st.chat_message("assistant").write(f"{user_input} <- eso dijiste")
+st.title("Ejemplo de Checkbox")
+
 
 import datetime
 
