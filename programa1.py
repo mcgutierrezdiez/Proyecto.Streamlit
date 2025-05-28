@@ -49,8 +49,8 @@ st.write("La fecha seleccionada es:", fecha)
 
 # Barco navegando
 import streamlit as st
-st.title("🚢 Barco animado navegando en Streamlit")
-st.markdown("Relájate y observa cómo el barco se mueve sobre el horizonte...")
+st.title("🐋 Ballena animado navegando en Streamlit")
+st.markdown("Relájate y observa cómo la ballena se mueve sobre el horizonte...")
 
 barco_html = """
 <style>
@@ -83,7 +83,7 @@ barco_html = """
 </style>
 
 <div class="mar"></div>
-<div class="barco">⛵</div>
+<div class="barco">🐋</div>
 """
 
 st.markdown(barco_html, unsafe_allow_html=True)
