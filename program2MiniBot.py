@@ -16,12 +16,13 @@ with st.chat_message("user", avatar="😊"):
    st.markdown(prompt)
 
 # Generate a response using the OpenAI API.
-
+contexto = "en el curso de matematicas discretas son estudiantes de carreras de negocios "
+promptfinal = contexto + prompt
 stream = client.chat.completions.create(
         model="gpt-4o-mini",  
         messages=[
             {"role": "system", "content": "Eres un asistente para un curso de matematicas discretas de primer semestre de universidad"},
-            {"role": "user", "content": prompt}
+            {"role": "user", "content": promptfin}
         ],
         max_tokens=800,
         temperature=0,
