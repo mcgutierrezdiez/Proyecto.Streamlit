@@ -8,9 +8,9 @@ openai_api_key = st.secrets["api_key"]
 # Create an OpenAI client.
 client = OpenAI(api_key=openai_api_key)
 
-prompt = st.chat_input("¿en que te puedo ayudar?")
-#if prompt==None:
-#   st.stop()
+prompt = st.chat_input("¿Hola, en que te puedo ayudar hoy?")
+if prompt==None:
+   st.stop()
 
 #with st.chat_message("user"):
 #   st.markdown(prompt)
