@@ -12,7 +12,7 @@ prompt = st.chat_input("¿Hola, en que te puedo ayudar hoy?")
 if prompt==None:
    st.stop()
 
-with st.chat_message("user", avatar = "😊"):
+with st.chat_message("user", avatar="😊"):
    st.markdown(prompt)
 
 # Generate a response using the OpenAI API.
