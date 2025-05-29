@@ -10,21 +10,21 @@ client = OpenAI(api_key=openai_api_key)
 
 prompt = st.chat_input("¿Hola, en que te puedo ayudar hoy?")
 if prompt==None:
-   st.stop()
+   st.stop 
 
 with st.chat_message("user", avatar="😊"):
    st.markdown(prompt)
 
 # Generate a response using the OpenAI API.
 
-#stream = client.chat.completions.create(
-#        model="gpt-4o-mini",  
-#        messages=[
-#            {"role": "system", "content": "You are an assistant."},
-#            {"role": "user", "content": prompt}
-#        ],
-#        max_tokens=800,
-#        temperature=0,
+stream = client.chat.completions.create(
+        model="gpt-4o-mini",  
+        messages=[
+            {"role": "system", "content": "Eres un asistente para un curso de matematicas discretas de primer semestre de universidad"},
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=800,
+        temperature=0,
 #    )
 #respuesta = stream.choices[0].message.content
 
