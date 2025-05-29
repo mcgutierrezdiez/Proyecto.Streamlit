@@ -1,19 +1,32 @@
-# mini bot
 import streamlit as st
+from openai import OpenAI
 
-#st.set_page_config(page_title="Ejemplo Chat", layout="centered")
+# Show title and description.
+st.title("💬 Chatbot")
 
-st.title("💬 Mini Chatbot (propuesta ejercicios proposiciones logicas)")
+openai_api_key = st.secrets["api_key"] 
+# Create an OpenAI client.
+client = OpenAI(api_key=openai_api_key)
 
-# Entrada tipo chat (abajo de la pantalla)
-user_input = st.chat_input("Sugerencias de ejercicios de proposiciones logicas")
+#prompt = st.chat_input("What is up?")
+#if prompt==None:
+#   st.stop()
 
-# Si el usuario escribe algo, mostramos los mensajes
-if user_input:
-    # Mostrar el mensaje del usuario
-    st.chat_message("user","🐋").write(user_input)
+#with st.chat_message("user"):
+#   st.markdown(prompt)
 
-    # Mostrar una respuesta simple del asistente
-    st.chat_message("assistant").write(f"{user_input} <- eso dijiste")
-    st.write("¡Buen día! Claro, aquí van unos ejercicios para que te diviertas un rato: \n\n1. Demuestra que \\( p \\land (q \\lor r) \\) es equivalente a \\( (p \\land q) \\lor (p \\land r) \\).\n2. Crea una tabla de verdad para la proposición \\( (p \\rightarrow q) \\land (\\neg q \\rightarrow \\neg p) \\).\n3. Encuentra el valor de verdad de la proposición \\( p \\lor (q \\land \\neg p) \\) cuando \\( p \\) es verdadero y \\( q \\) es falso.\n\n¡Diviértete!")
-    
+# Generate a response using the OpenAI API.
+
+#stream = client.chat.completions.create(
+#        model="gpt-4o-mini",  
+#        messages=[
+#            {"role": "system", "content": "You are an assistant."},
+#            {"role": "user", "content": prompt}
+#        ],
+#        max_tokens=800,
+#        temperature=0,
+#    )
+#respuesta = stream.choices[0].message.content
+
+#with st.chat_message("assistant"):
+#   st.write(respuesta)
