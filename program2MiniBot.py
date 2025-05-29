@@ -25,8 +25,8 @@ stream = client.chat.completions.create(
         ],
         max_tokens=800,
         temperature=0,
-#    )
-#respuesta = stream.choices[0].message.content
+    )
+respuesta = stream.choices[0].message.content
 
 #with st.chat_message("assistant"):
 #   st.write(respuesta)
