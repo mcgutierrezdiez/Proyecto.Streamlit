@@ -12,15 +12,15 @@ prompt = st.chat_input("¿En qué te puedo ayudar hoy?")
 if prompt==None:
    st.stop()
 
-with st.chat_message("user",avatar = "🦖"):
+with st.chat_message("user",avatar = "😊"):
    st.markdown(prompt)
 
 # Generate a response using the OpenAI API.
-contexto = "en este curso de matematicas discretas hay estudiantes de carreras de negocios"
+contexto = "en este curso de matematicas discretas hay estudiantes de carreras de negociosde primer semestre en universidad"
 stream = client.chat.completions.create(
         model="gpt-4o-mini",  
         messages=[
-            {"role": "system", "content": "Eres un asistente para el curso de matemáticas discretas de primer semestre en universidad"},
+            {"role": "system", "content": "Eres un asistente para el curso de matemáticas discretas"},
             {"role": "user", "content": prompt}
         ],
         max_tokens=800,
