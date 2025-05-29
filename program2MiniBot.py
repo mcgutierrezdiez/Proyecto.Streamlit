@@ -16,7 +16,8 @@ with st.chat_message("user",avatar = "😊"):
    st.markdown(prompt)
 
 # Generate a response using the OpenAI API.
-contexto = '''en este curso de matematicas discretas hay estudiantes de carreras de negociosde primer semestre en universidad que necesitan explicaciones detalladas de ejercicios
+contexto = '''en este curso de matematicas discretas hay estudiantes de carreras de negociosde primer semestre en universidad 
+que necesitan explicaciones detalladas de ejercicios relacionados con negocios
 
 '''
 stream = client.chat.completions.create(
