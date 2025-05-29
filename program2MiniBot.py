@@ -11,7 +11,7 @@ user_input = st.chat_input("Sugerencias de ejercicios de proposiciones logicas")
 # Si el usuario escribe algo, mostramos los mensajes
 if user_input:
     # Mostrar el mensaje del usuario
-    st.chat_message("user").write(user_input)
+    st.chat_message("user","🐋").write(user_input)
 
     # Mostrar una respuesta simple del asistente
     st.chat_message("assistant").write(f"{user_input} <- eso dijiste")
