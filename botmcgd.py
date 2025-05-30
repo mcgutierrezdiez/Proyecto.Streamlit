@@ -48,3 +48,4 @@ respuesta = response.choices[0].message.content
 # Mostrar respuesta del asistente
 with st.chat_message("assistant", avatar="🧠"):
     st.write(respuesta)
+st.balloons
