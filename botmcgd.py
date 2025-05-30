@@ -40,7 +40,7 @@ response = client.chat.completions.create(
         {"role": "user", "content": prompt}
     ],
     max_tokens=800,
-    temperature=0.5,
+    temperature=0.1,
 )
 
 respuesta = response.choices[0].message.content
